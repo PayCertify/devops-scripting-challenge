@@ -1,8 +1,8 @@
+# Export your aws creds or reference a profile in this block
 provider "aws" {
   region                  = "us-west-1"
-  shared_credentials_file = "/Users/smoloney/.aws/credentials"
-  profile                 = "smoloney"
 }
+
 
 
 module "vpc"{
