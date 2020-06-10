@@ -1,5 +1,18 @@
-FROM centos:7
+#FROM alpine:3.12
+FROM python:3.6.10-alpine
 
-RUN yum -y install epel-release git-core
+RUN mkdir -p /opt/paycertify
+WORKDIR /opt/paycertify
+COPY requirements.txt ./tmp/
 
-RUN yum -y install maven unzip java-1.8.0-openjdk
+RUN apk --no-cache update &&\
+    apk --no-cache add -qq `cat tmp/requirements.txt` &&\
+    pip3 install pyyaml gitpython pytest
+
+
+
+COPY ci.py .
+
+
+CMD [ "sh" ]
+# USER root
