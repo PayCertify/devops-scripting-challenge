@@ -13,13 +13,6 @@ output "vpc_id" {
     value = "${aws_vpc.rsrc01.0.id}"
 }
 
-# output "public_subnet"{
-#     value = "${aws_subnet.rsrc01_public.*.cidr_block}"
-# }
-
-# output "private_subnet" {
-#     value = "${aws_subnet.rsrc01_private.*.cidr_block}"
-# }
 
 output "public_subnet_id"{
     value = "${aws_subnet.rsrc01_public.*.id}"

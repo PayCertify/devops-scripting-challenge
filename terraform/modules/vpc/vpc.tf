@@ -1,12 +1,8 @@
-
-
-
-
 # Fetches all availability zones from aws
 data "aws_availability_zones" "available" {}
 
 ####################
-# VPC
+# VPC               #
 ####################
 resource "aws_vpc" "rsrc01" {
     count = "${var.enable == "true" ? 1 : 0}"
@@ -20,7 +16,7 @@ resource "aws_vpc" "rsrc01" {
 
 
 #################
-# SUBNETS
+# SUBNETS        #
 #################
 resource "aws_subnet" "rsrc01_public" {
     count = "${var.enable == "true" ? var.num_subnet : 0}"
