@@ -1,7 +1,7 @@
 PayCertify Scripting Challenge
 ===
 
-This app serves as a simple CI system.  It takes two inputs, a build task and the url, to a git repository.  Once the CI application has cloned the repository, it will search for a `pipeline.yml` file, parse it and run commands from the build step if they are valid.
+This app serves as a simple CI system.  It takes two inputs, a build task and the url, to a git repository.  Once the CI application has cloned the repository, it will search for a `pipeline.yml` file, parse it and run commands from the build step if they are valid. If needed, a dockerfile has been provided with CI script to build the application.
 
 This repository also includes two terraform modules which create a VPC and ECS to deploy the app to Fargate.
 
